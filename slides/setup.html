@@ -1,0 +1,252 @@
+<!-- <!doctype html> -->
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+
+<title>Setup</title>
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="stylesheet" href="css/reveal.min.css">
+<link rel="stylesheet" href="css/theme/typesafe-training.css" id="theme">
+<link rel="stylesheet" href="lib/css/idea.css">
+
+<!-- Printing and PDF exports -->
+<script>
+  var link = document.createElement( 'link' );
+  link.rel = 'stylesheet';
+  link.type = 'text/css';
+  link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+  document.getElementsByTagName( 'head' )[0].appendChild( link );
+</script>
+
+<!--[if lt IE 9]>
+<script src="lib/js/html5shiv.js"></script>
+<![endif]-->
+</head>
+
+<body>
+
+<div class="reveal">
+<div class="slides">
+
+<!-- ########################################################################################### -->
+<!-- BEGIN
+<!-- ########################################################################################### -->
+
+<section data-markdown data-background="#103a51"><script type="text/template">
+## Setup Reactive Workshop
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+##Setup
+
+- This document describes hwo to setup the development environment and the case study project
+- We don&apos;t lock you into a specific setup, but recommend using the following tools:
+    - IDE: Eclipse or IntelliJ
+    - Build tool: activator
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+## Prerequisites
+
+- JDK 8
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+##Reactive Stocks Case Study
+
+- The use case for is an application which renders stocks in real-time
+- In this workshop we will start building Reactive Stocks from scratch
+- Technologies:
+  - Java 8
+  - Play
+  - Akka
+  - Akka Cluster Sharding
+  - Akka Persistence
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+## Install ReactiveStocks Case Study
+- The case study is available on [github.com/typesafehub/reactive-stocks-java8](https://github.com/typesafehub/reactive-stocks-java8)
+- Clone the repository and *cd* into the *reactive-stocks-java8* directory
+
+```bash
+git clone git@github.com:typesafehub/reactive-stocks-java8.git
+cd reactive-stocks-java8
+```
+</script></section>
+
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+## Install Activator
+
+- Download Activator 1.3.2 from [here](http://downloads.typesafe.com/typesafe-activator/1.3.2/typesafe-activator-1.3.2.zip)
+- Unzip *typesafe-activator-1.3.2.zip* to your local disk
+</script></section>
+
+
+<!-- ########################################################################################### -->
+
+<section id="add-adctivator-to-path" class="content" data-markdown><script type="text/template">
+## Add Activator to your PATH
+
+- Unix systems: 
+  ```bash
+  export PATH=$PATH:/path/to/activator-dir
+  ```
+- Windows: Update the path in the global environment variables
+</script></section>
+
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+## Make yourself familiar with Activator
+
+- Starting *activator* takes you to an **interactive session**
+- If not already there, *cd* into the *reactive-stocks-java8* directory and start activator:
+
+```no-highlight
+reactive-stocks-java8$ activator
+...
+[info] Set current project to reactive-stocks-java8 ...
+[reactive-stocks-java8] $
+```
+
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+## Run Reactive Stocks application
+
+In the activator console, type `run` to start the application
+
+```no-highlight
+[reactive-stocks-java8] $ run
+[info] play - Listening for HTTP on /0:0:0:0:0:0:0:0:9000
+...
+```
+
+- This will start a local Netty HTTP server on port 9000
+- Go to http://localhost:9000 to open the app in the browser
+
+</script></section>
+
+<!-- ########################################################################################### -->
+
+<section data-markdown><script type="text/template">
+## Setup an IDE
+
+- We recommend to use one of the following IDEs
+  - IntelliJ IDEA
+  - Eclipse  
+</script></section>
+
+<!-- ########################################################################################### -->
+
+
+<section data-markdown><script type="text/template">
+## Install IntelliJ IDEA with Scala and Play plugin
+
+- Follow these instructions if you want to use IntelliJ IDEA
+- Download and install [IntelliJ 14 Community Edition](https://www.jetbrains.com/idea/download)
+- Install the Scala plugin (most of the app is in Java, but some classes are in Scala as well)
+- *Optional*: You can install the *Playframework Support* plugin if you have installed the IntelliJ Ultimate Edition
+- Open the *reactive-stocks-java8* project in IntelliJ
+- IntelliJ will identify the application as an sbt project
+</script></section>
+
+
+<!-- ########################################################################################### -->
+
+
+<section id="install-eclipse-1" class="content" data-markdown><script type="text/template">
+## Install the Scala IDE for Eclipse I
+
+- Follow these instructions if you want to use Eclipse
+- You can download the prepackaged and preconfigured Scala IDE for your platform from [scala-ide.org/download/sdk.html](http://scala-ide.org/download/sdk.html)
+- You can also use your already installed Eclipse:
+    - Use the following update site to install the latest Scala IDE plugin:
+    - Eclipse 4.4 (Luna): <nobr>[download.scala-ide.org/sdk/lithium/e44/scala211/stable/site](http://download.scala-ide.org/sdk/lithium/e44/scala211/stable/site)</nobr>
+    - Eclipse 3.8 - 4.3 (Juno and Kepler): <nobr>[download.scala-ide.org/sdk/lithium/e38/scala211/stable/site](http://download.scala-ide.org/sdk/lithium/e38/scala211/stable/site)</nobr>
+</script></section>
+
+<!-- ########################################################################################### -->
+
+
+<section id="install-eclipse-2" class="content" data-markdown><script type="text/template">
+## Install the Scala IDE for Eclipse II
+
+- Go to your *reactive-stocks-java8* activator console and run the command *eclipse*
+```no-highlight
+[reactive-stocks-java8] $ eclipse with-source=true
+...
+[info] Successfully created Eclipse project files for project(s)
+```
+
+- In Eclipse import the *reactive-stocks-java8* project with <nobr>*Import... > Existing Projects into Workspace*</nobr>
+- On the *Import Projects* page browse to the *reactive-stocks-java8* folder
+</script></section>
+
+
+<!-- ########################################################################################### -->
+
+<section id="course-materials" class="content" data-markdown><script type="text/template">
+## Great job!
+
+- By now you should be all set with the development environment and the case study project
+- Looking forward to do some reactive hacking next week!
+</script></section>
+
+<!-- ########################################################################################### -->
+<!-- END
+<!-- ########################################################################################### -->
+
+
+</div>
+</div>
+
+<script src="lib/js/head.min.js"></script>
+<script src="js/reveal.min.js"></script>
+<script>
+
+  // Full list of configuration options available here:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    history: true,
+    center: true,
+    maxScale: 2.0,
+
+    transition: 'none', // default/cube/page/concave/zoom/linear/fade/none
+
+    // Optional libraries used to extend on reveal.js
+    dependencies: [
+      { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+    ]
+  });
+</script>
+
+</body>
+</html>
